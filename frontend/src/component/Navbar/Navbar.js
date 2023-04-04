@@ -8,11 +8,10 @@ function Navbar() {
     <div className="navbar">
       <div className="navbar-menu">
         <div className="logo">CraveSavor</div>
-
         <div className="menubar-wrap">
           <div className="menu">Home</div>
           <div className="menu">Save</div>
-          <div className="menu">About-Us</div>
+          <div className="menu">About Us</div>
         </div>
         <Signup />
       </div>
