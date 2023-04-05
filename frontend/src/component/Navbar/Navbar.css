@@ -6,56 +6,66 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
-    background-color: rgb(61, 31, 31);
+    background-color: rgb(234, 223, 223);
     align-items: center;
     height: 5rem;
     
 }
 
 .logo{
-    color: white;
+    color: rgb(168, 74, 74);
     font-size: 3rem;
-    /* font-family: pt;font-family: Rouge Script; */
     font-weight: 300;
+    margin-right: 15vw;
 }
 
-.input-wrapper{
+.menu-bar{
+    position: relative;
+    width: 100%;
+    display: flex;
     background-color:transparent;
+    align-items: center;
+    height: 4rem;
+    justify-content: center;
+    z-index: 2;
+}
+
+
+.input-wrapper{
+    background-color:white;
     border-radius: 10px;
-    height: 2.5rem;
+    height: 3rem;
     padding: 0 15px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     display: flex;
     align-items: center;
-    width: 30%;
+    width: 45%;
 }
 
 input{
     background-color: transparent;
     border: none;
     height: 100%;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     width: 100%;
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
 input:focus{
     outline: none;
 }
 
-
-.menu-bar{
-    width: 100%;
-    display: flex;
-    background-color: rgb(255, 255, 255);
-    align-items: center;
-    height: 4rem;
-    justify-content: center;
+#search-icon{
+    font-size: 1.5rem;
+    color: rgb(160, 28, 48);
 }
 
+
+
+
 .menubar-wrap {
-    color:aliceblue;
-    width: 30%;
+    color:rgb(121, 65, 65);
+    width: 35%;
     display: flex;
     justify-content: space-evenly;
     font-size: 1.5rem;
@@ -66,10 +76,44 @@ input:focus{
 }
 
 .menu{
-    width: 7vw;
+    width: 8vw;
     height: fit-content;
     display: flex;
     justify-content: center;
     font-size: 2 rem;
+
+}
+
+
+@media screen and (max-width: 960px) {
+    .navbar-menu{
+        justify-content: space-between;
+    }
+    .logo {
+        /* color: white; */
+        font-size: 2rem;
+        font-weight: 400;
+        margin-left: 4vw;
+    }
+
+    .menubar-wrap{
+        display: none;
+    }
+
+    .input-wrapper{
+        width: 80%;
+        height: 2rem;
+    }
+}
+@media screen and (max-width: 360px) {
+    
+    .logo {
+        font-size: 1.5rem;
+        margin-left: 2vw;
+    }
+
+    .input-wrapper{
+        width: 90%;
+    }
 
 }
