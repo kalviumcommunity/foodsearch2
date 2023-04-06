@@ -13,3 +13,50 @@
     
     margin-top: -4rem;
 }
+
+.country{
+    /* background-color: blueviolet; */
+    width: 100%;
+    height: auto;
+}
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+.country h1{
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    font-family: 'Italianno', cursive;
+}
+
+.cuisine-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 4vw;
+    row-gap: 5vh;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10vh;
+}
+
+
+.cuisine-box{
+    width: 25vw;
+    height: 40vh;
+    background-color: aliceblue;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cuisine-box img{
+    width: 90%;
+    height: 80%;
+}
+
+.cuisine-box h2{
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
