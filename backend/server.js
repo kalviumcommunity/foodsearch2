@@ -10,7 +10,11 @@ env.config();
 
 const port = process.env.PORT;
 
+/*s a middleware function in the Express framework that enables 
+Cross-Origin Resource Sharing (CORS) for all routes in the server.*/
 app.use(cors());
+
+
 app.use(express.json());
 mongoose.set("strictQuery", false);
 
@@ -33,6 +37,24 @@ app.get("/category",async (req, res) => {
   const category=await Category.find()
   res.send(category);
 });
+
+
+app.get("/category/:id",async(req,res)=>{
+  const {id}=req.params;
+
+
+  if(!mongoose.Types.ObjectId.isValid(id)){
+    return res.status(404).json({error: "No such category!, Sorry :("})
+  }
+
+  const category = await Category.findById(id);
+
+  if(!category){
+    return res.status(404).json({error:"No such category, Sorry :("})
+  }
+
+  res.status(200).json(category);
+})
 
 app.post("/category", (req, res) => {
   const { country, countryImage, subCategory } = req.body;

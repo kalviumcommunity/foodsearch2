@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "./Homepage.css";
+import Navbar from "../Navbar/Navbar";
 
 function Homepage() {
   const [category, setCategory] = useState([]);
@@ -21,6 +22,7 @@ function Homepage() {
   console.log(category);
   return (
     <div className="Homepage">
+      <Navbar/>
       <div className="image-courosel">
         <Swiper spaceBetween={50} slidesPerView={1}>
           <SwiperSlide>
