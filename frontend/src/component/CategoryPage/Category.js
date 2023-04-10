@@ -10,8 +10,9 @@ export default function Category() {
 
   useEffect(() => console.log(recipeData), [recipeData]);
 
+  let API=process.env.REACT_APP_API +`/category/${id}`
   useEffect(() => {
-    fetch(`http://localhost:5000/category/${id}`)
+    fetch(API)
       .then((res) => res.json())
       .then((data) => {
         setRecipeData(data);

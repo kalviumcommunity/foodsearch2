@@ -8,9 +8,9 @@ import { Link } from "react-router-dom";
 
 function Homepage() {
   const [category, setCategory] = useState([]);
-
+  let API=process.env.REACT_APP_API +'/category'
   useEffect(() => {
-    fetch("http://localhost:5000/category")
+    fetch(API)
       .then((res) => res.json())
       .then((data) => {
         setCategory(data);
