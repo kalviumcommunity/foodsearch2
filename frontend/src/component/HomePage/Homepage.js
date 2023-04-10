@@ -4,12 +4,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "./Homepage.css";
 import Navbar from "../Navbar/Navbar";
+import { Link } from "react-router-dom";
 
 function Homepage() {
   const [category, setCategory] = useState([]);
-
+  let API=process.env.REACT_APP_API +'/category'
   useEffect(() => {
-    fetch("http://localhost:5000/category")
+    fetch(API)
       .then((res) => res.json())
       .then((data) => {
         setCategory(data);
@@ -65,13 +66,15 @@ function Homepage() {
         <div className="cuisine-container">
           {category.map((e, index) => {
             return (
-              <div key={index} className="cuisine-box">
+            <Link className="abc" to={`/home/${e._id}`}>
+                <div key={index} className="cuisine-box">
                 <img
                   src={e.countryImage}
                   alt="img"
                 />
                 <h2>{e.country} Food</h2>
               </div>
+            </Link> 
             );
           })}
         </div>

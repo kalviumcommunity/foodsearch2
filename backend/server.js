@@ -4,6 +4,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const env = require("dotenv");
 const Category = require("./Model/Category");
+const Recipe=require("./Model/Recipe")
 
 //environment variable or you can say constants
 env.config();
@@ -38,7 +39,6 @@ app.get("/category",async (req, res) => {
   res.send(category);
 });
 
-
 app.get("/category/:id",async(req,res)=>{
   const {id}=req.params;
 
@@ -55,6 +55,41 @@ app.get("/category/:id",async(req,res)=>{
 
   res.status(200).json(category);
 })
+
+app.get("/recipe",async(req,res)=>{
+  const recipe=await Recipe.find(req.query);
+  res.send(recipe)
+})
+
+
+app.post("/recipe", (req, res) => {
+  const { name, image, country, foodtype, recipe, video, serving, ingredient } =req.body;
+  const recipes = new Recipe();
+
+  recipes.name = name;
+  recipes.image = image;
+  recipes.country = country;
+  recipes.foodtype = foodtype;
+  recipes.recipe = recipe;
+  recipes.video = video;
+  recipes.serving = serving;
+  recipes.ingredient = ingredient;
+
+  recipes
+    .save()
+    .then((result) => {
+      console.log("Saved successfully:", result);
+    })
+    .catch((error) => {
+      console.error("Error saving:", error);
+    });
+
+  res.send({ message: "done successfully" });
+});
+
+
+
+
 
 app.post("/category", (req, res) => {
   const { country, countryImage, subCategory } = req.body;

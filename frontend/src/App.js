@@ -5,6 +5,8 @@ import Homepage from './component/HomePage/Homepage';
 import Navbar from './component/Navbar/Navbar';
 import Save from './component/Save/Save';
 import AboutUs from './component/Aboutus/AboutUs';
+import Category from './component/CategoryPage/Category';
+import Differentrecipe from './component/DifferentRecipe/Differentrecipe';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <Routes>
       <Route path='/'element={<Landingpage/>}/>
       <Route path='/home'element={<Homepage/>}/>
+      <Route path='/home/:id'element={<Category/>}/>
+      <Route path="/category/:foodType/:country" element={<Differentrecipe/>} />
       <Route path='/save'element={<Save/>}/>
       <Route path='/about-us'element={<AboutUs/>}/>
       </Routes>
