@@ -10,7 +10,7 @@ export default function Category() {
 
   useEffect(() => console.log(recipeData), [recipeData]);
 
-  let API=process.env.REACT_APP_API +`/category/${id}`
+  let API = process.env.REACT_APP_API + `/category/${id}`;
   useEffect(() => {
     fetch(API)
       .then((res) => res.json())
@@ -25,16 +25,19 @@ export default function Category() {
   return (
     <>
       <div className="display-img">
-        <img src="https://restaurantindia.s3.ap-south-1.amazonaws.com/s3fs-public/content6553.jpg" alt="country"></img>
+        <img
+          src="https://restaurantindia.s3.ap-south-1.amazonaws.com/s3fs-public/content6553.jpg"
+          alt="country"
+        ></img>
       </div>
       <div className="category-heading">
         <h1 className="type-of-recipe">{recipeData.country} Food</h1>
       </div>
 
       <div className="category-container">
-      {subcategory.map((e) => {
+        {subcategory.map((e) => {
           return (
-            <Link className="abc">
+            <Link to={`/category/${e.foodType}/${recipeData.country}`}>
               <div className="category-box">
                 <img className="img" src={e.foodImage} alt={e.foodType} />
                 <div className="category-names">

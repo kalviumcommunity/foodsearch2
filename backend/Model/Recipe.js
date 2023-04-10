@@ -13,25 +13,14 @@ const recipe = new mongoose.Schema({
         type:String,
         required:true,
     },
-    countryImage:{
-        type:String,
-        required:true,
-    },
     foodtype:{
         type:String,
         required:true,
     },
-    foodtypeImage:{
+    recipe:{
         type:String,
         required:true,
     },
-    recipe:[
-    {
-        recipeNumber:{
-            type:String
-        }
-    }
-],
     video:{
         type:String,
         required:true,
