@@ -7,6 +7,7 @@ import Save from './component/Save/Save';
 import AboutUs from './component/Aboutus/AboutUs';
 import Category from './component/CategoryPage/Category';
 import Differentrecipe from './component/DifferentRecipe/Differentrecipe';
+import Recipe from './component/Recipe/Recipe';
 
 function App() {
   return (
@@ -15,10 +16,11 @@ function App() {
       <Routes>
       <Route path='/'element={<Landingpage/>}/>
       <Route path='/home'element={<Homepage/>}/>
-      <Route path='/home/:id'element={<Category/>}/>
-      <Route path="/category/:foodType/:country" element={<Differentrecipe/>} />
+      <Route path='/country/:country/:id'element={<Category/>}/>
+      <Route path="/country/:country/subcategory/:foodType" element={<Differentrecipe/>} />
       <Route path='/save'element={<Save/>}/>
       <Route path='/about-us'element={<AboutUs/>}/>
+      <Route path={"indian/:id"} element={<Recipe />} />
       </Routes>
     </div>
   );

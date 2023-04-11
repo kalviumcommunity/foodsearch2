@@ -61,6 +61,23 @@ app.get("/recipe",async(req,res)=>{
   res.send(recipe)
 })
 
+app.get("/recipe/:id", async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: "No such recipe!, Sorry!" });
+  }
+
+  const data = await Recipe.findById(id);
+
+  if (!data) {
+    return res.status(404).json({ error: "No such recipe!, Sorry!" });
+  }
+
+  res.status(200).json(data);
+});
+
+
 
 app.post("/recipe", (req, res) => {
   const { name, image, country, foodtype, recipe, video, serving, ingredient } =req.body;
