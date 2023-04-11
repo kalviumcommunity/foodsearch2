@@ -5,6 +5,7 @@ import "swiper/css";
 import "./Homepage.css";
 import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 function Homepage() {
   const [category, setCategory] = useState([]);
@@ -79,6 +80,7 @@ function Homepage() {
           })}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

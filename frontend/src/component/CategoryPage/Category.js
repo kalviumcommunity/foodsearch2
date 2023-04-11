@@ -18,6 +18,7 @@ export default function Category() {
         setRecipeData(data);
       });
   }, [id]);
+  console.log(recipeData)
 
   const subcategory = recipeData.subCategory;
   console.log(subcategory);

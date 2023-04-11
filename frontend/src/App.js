@@ -9,6 +9,7 @@ import Category from './component/CategoryPage/Category';
 import Differentrecipe from './component/DifferentRecipe/Differentrecipe';
 import Recipe from './component/Recipe/Recipe';
 
+
 function App() {
   return (
     <div className="App">
@@ -23,6 +24,8 @@ function App() {
       <Route path={"indian/:id"} element={<Recipe />} />
       </Routes>
     </div>
+     
+
   );
 }
 
