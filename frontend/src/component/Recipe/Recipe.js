@@ -9,7 +9,9 @@ function Recipe() {
   useEffect(() => console.log(recipeData), [recipeData]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/recipe/${id}`)
+
+    const API=process.env.REACT_APP_API+`/recipe/${id}`
+    fetch(API)
       .then((res) => res.json())
       .then((data) => {
         setRecipeData(data);

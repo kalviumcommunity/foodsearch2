@@ -10,8 +10,7 @@ export default function Differentrecipe() {
   const [advice, setAdvice] = useState([]);
 
   const API =
-    process.env.REACT_APP_API +
-    `/recipe?country=${country}&foodtype=${foodType}`;
+    process.env.REACT_APP_API +`/recipe?country=${country}&foodtype=${foodType}`;
   useEffect(() => {
     fetch(API)
       .then((res) => res.json())
