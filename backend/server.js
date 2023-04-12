@@ -8,11 +8,9 @@ const Recipe=require("./Model/Recipe")
 
 //environment variable or you can say constants
 env.config();
-
 const port = process.env.PORT;
 
-/*s a middleware function in the Express framework that enables 
-Cross-Origin Resource Sharing (CORS) for all routes in the server.*/
+/*s a middleware function in the Express framework that enables Cross-Origin Resource Sharing (CORS) for all routes in the server.*/
 app.use(cors());
 
 
@@ -34,11 +32,20 @@ mongoose
     console.log(err);
   });
 
+
+
+
+
+
+
+
+//getting all the category data from category api
 app.get("/category",async (req, res) => {
   const category=await Category.find()
   res.send(category);
 });
 
+//getting category data based on id from category api
 app.get("/category/:id",async(req,res)=>{
   const {id}=req.params;
 
@@ -56,12 +63,60 @@ app.get("/category/:id",async(req,res)=>{
   res.status(200).json(category);
 })
 
+
+//adding data in category api
+app.post("/category", (req, res) => {
+  const { country, countryImage,subCategoryImage, subCategory } = req.body;
+  const category = new Category();
+
+  category.country = country;
+  category.countryImage = countryImage;
+  category.subCategoryImage=subCategoryImage
+  category.subCategory = subCategory;
+  
+
+  category
+  .save()
+  .then((result) => {
+    console.log("Saved category successfully :", result);
+  })
+  .catch((error) => {
+    console.error("Error saving:", error);
+  });
+
+res.send({ message: "done successfully" });
+});
+
+
+
+
+
+//getting all the data from recipe api
 app.get("/recipe",async(req,res)=>{
   const recipe=await Recipe.find(req.query);
   res.send(recipe)
 })
 
 
+//geting data based on id from recipe api
+app.get("/recipe/:id", async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: "No such recipe!, Sorry!" });
+  }
+
+  const data = await Recipe.findById(id);
+
+  if (!data) {
+    return res.status(404).json({ error: "No such recipe!, Sorry!" });
+  }
+
+  res.status(200).json(data);
+});
+
+
+//adding data in recipe api
 app.post("/recipe", (req, res) => {
   const { name, image, country, foodtype, recipe, video, serving, ingredient } =req.body;
   const recipes = new Recipe();
@@ -91,22 +146,4 @@ app.post("/recipe", (req, res) => {
 
 
 
-app.post("/category", (req, res) => {
-  const { country, countryImage, subCategory } = req.body;
-  const category = new Category();
 
-  category.country = country;
-  category.countryImage = countryImage;
-  category.subCategory = subCategory;
-
-  category
-  .save()
-  .then((result) => {
-    console.log("Saved category successfully :", result);
-  })
-  .catch((error) => {
-    console.error("Error saving:", error);
-  });
-
-res.send({ message: "done successfully" });
-});

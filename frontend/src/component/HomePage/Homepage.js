@@ -5,6 +5,7 @@ import "swiper/css";
 import "./Homepage.css";
 import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 function Homepage() {
   const [category, setCategory] = useState([]);
@@ -66,7 +67,7 @@ function Homepage() {
         <div className="cuisine-container">
           {category.map((e, index) => {
             return (
-            <Link className="abc" to={`/home/${e._id}`}>
+            <Link className="abc" to={`/country/${e.country}/${e._id}`}>
                 <div key={index} className="cuisine-box">
                 <img
                   src={e.countryImage}
@@ -79,6 +80,7 @@ function Homepage() {
           })}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

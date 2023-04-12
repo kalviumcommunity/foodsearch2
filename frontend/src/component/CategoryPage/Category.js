@@ -18,6 +18,7 @@ export default function Category() {
         setRecipeData(data);
       });
   }, [id]);
+  console.log(recipeData)
 
   const subcategory = recipeData.subCategory;
   console.log(subcategory);
@@ -37,7 +38,7 @@ export default function Category() {
       <div className="category-container">
         {subcategory.map((e) => {
           return (
-            <Link to={`/category/${e.foodType}/${recipeData.country}`}>
+            <Link to={`/country/${recipeData.country}/subcategory/${e.foodType}`}>
               <div className="category-box">
                 <img className="img" src={e.foodImage} alt={e.foodType} />
                 <div className="category-names">
