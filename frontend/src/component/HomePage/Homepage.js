@@ -6,6 +6,7 @@ import "./Homepage.css";
 import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
+import Searchbar from "../Navbar/Searchbar";
 
 function Homepage() {
   const [category, setCategory] = useState([]);
@@ -25,12 +26,13 @@ function Homepage() {
   return (
     <div className="Homepage">
       <Navbar/>
+      <Searchbar/>
       <div className="image-courosel">
         <Swiper spaceBetween={50} slidesPerView={1}>
           <SwiperSlide>
             <div className="image">
               <img
-                src="https://i0.wp.com/swadishta.de/wp-content/uploads/2021/01/Idle.jpg?fit=1200%2C800&ssl=1"
+                src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e06cd854344503.59575b1721d15.jpg"
                 alt="img"
               />
             </div>
@@ -38,7 +40,7 @@ function Homepage() {
           <SwiperSlide>
             <div className="image">
               <img
-                src="https://cdn.sightseeingtoursitaly.com/wp-content/uploads/2019/06/Famous-Italian-dishes.jpg"
+                src="https://i.redd.it/8ih18a1hi6851.jpg"
                 alt="img"
               />
             </div>
@@ -46,7 +48,7 @@ function Homepage() {
           <SwiperSlide>
             <div className="image">
               <img
-                src="https://www.fryingpanadventures.com/wp-content/uploads/2020/10/image-137-scaled-e1604152201367.jpeg"
+                src="https://img.itinari.com/page/content/original/78d81991-8cf7-4427-8bf4-87ccc9fa428d-3.png?ch=DPR&dpr=2.625&w=994&s=1a57e8d26e0125f5aad9c21d8c69e176"
                 alt="img"
               />
             </div>

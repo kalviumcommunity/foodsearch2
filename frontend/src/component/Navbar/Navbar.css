@@ -2,14 +2,21 @@
 
 
 
-.navbar-menu{
+.navbar{
+    position: fixed;
+    top: 0;
     width: 100%;
     display: flex;
     justify-content: space-around;
-    background-color: rgb(234, 223, 223);
+    background-color:transparent;
     align-items: center;
     height: 5rem;
-    
+    z-index: 7;
+}
+
+.navbar.active{
+    background-color: black;
+    opacity: 0.9;
 }
 
 .abc{
@@ -17,7 +24,7 @@
 }
 
 .logo{
-    color: rgb(168, 74, 74);
+    color: white;
     font-size: 3rem;
     font-weight: 300;
     margin-right: 15vw;
@@ -32,6 +39,7 @@
     height: 4rem;
     justify-content: center;
     z-index: 2;
+    margin-top: 5rem;
 }
 
 
@@ -85,7 +93,7 @@ input:focus{
     display: flex;
     justify-content: center;
     font-size: 2 rem;
-
+    color: white;
 }
 
 

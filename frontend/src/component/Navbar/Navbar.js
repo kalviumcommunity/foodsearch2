@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 import Signup from "./signup";
-import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function Navbar() {
+
+  const [navbar,setNavbar]=useState(false)
+
+
+  const changeBackground =()=>{
+    if(window.scrollY>=50){
+      setNavbar(true);
+    }
+    else{
+      setNavbar(false)
+    }
+  }
+
+  window.addEventListener('scroll',changeBackground);
+
   return (
-    <div className="navbar">
-      <div className="navbar-menu">
+    <div className="navbar-container">
+      <div className={navbar ?'navbar active':'navbar'}>
         <Link className="abc" to='/home'><div className="logo">CraveSavor</div></Link>
         <div className="menubar-wrap">
         <Link className="abc" to='/home'><div className="menu">Home</div></Link>
@@ -15,12 +29,6 @@ function Navbar() {
         <Link className="abc" to='/about-us'><div className="menu">About Us</div></Link>
         </div>
         <Signup />
-      </div>
-      <div className="menu-bar">
-        <div className="input-wrapper">
-          <FaSearch id="search-icon" />
-          <input placeholder="Type to search ..." />
-        </div>
       </div>
     </div>
   );
