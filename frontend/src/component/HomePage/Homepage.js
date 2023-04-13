@@ -2,15 +2,21 @@ import React, { useEffect, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import "swiper/swiper-bundle.css";
+import "swiper/css/effect-coverflow";
+import"swiper/css/effect-fade";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import "./Homepage.css";
 import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import Searchbar from "../Navbar/Searchbar";
+import {Autoplay,EffectFade, EffectCoverflow, Pagination, Navigation } from "swiper";
 
 function Homepage() {
   const [category, setCategory] = useState([]);
-  let API=process.env.REACT_APP_API +'/category'
+  let API = process.env.REACT_APP_API + "/category";
   useEffect(() => {
     fetch(API)
       .then((res) => res.json())
@@ -25,10 +31,39 @@ function Homepage() {
   console.log(category);
   return (
     <div className="Homepage">
-      <Navbar/>
-      <Searchbar/>
+      <Navbar />
+      <Searchbar />
+
+
+
       <div className="image-courosel">
-        <Swiper spaceBetween={50} slidesPerView={1}>
+        <Swiper
+          spaceBetween={0}
+          slidesPerView={1}
+          effect={"fade"}
+          grabCursor={true}
+          centeredSlides={true}
+          loop={true}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false
+        }}
+          fadeEffect={{
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier:2.5,
+            crossFade: true
+          }}
+          pagination={{ el: ".swiper-pagination", clickable: true }}
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+            clickable: true,
+          }}
+          modules={[Autoplay,EffectFade, EffectCoverflow, Pagination, Navigation]}
+          className="swiper-container"
+        >
           <SwiperSlide>
             <div className="image">
               <img
@@ -39,8 +74,13 @@ function Homepage() {
           </SwiperSlide>
           <SwiperSlide>
             <div className="image">
+              <img src="https://i.redd.it/8ih18a1hi6851.jpg" alt="img" />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="image">
               <img
-                src="https://i.redd.it/8ih18a1hi6851.jpg"
+                src="https://b.zmtcdn.com/data/pictures/3/18933213/224820871f5e4a5f0574ab612d7ffe6c.jpg"
                 alt="img"
               />
             </div>
@@ -48,41 +88,45 @@ function Homepage() {
           <SwiperSlide>
             <div className="image">
               <img
-                src="https://img.itinari.com/page/content/original/78d81991-8cf7-4427-8bf4-87ccc9fa428d-3.png?ch=DPR&dpr=2.625&w=994&s=1a57e8d26e0125f5aad9c21d8c69e176"
+                src="https://cdn.tasteatlas.com/images/dishes/dc21b62214df4bd195d8cc6736c53e29.jpg?m=facebook"
                 alt="img"
               />
             </div>
           </SwiperSlide>
-          <SwiperSlide>
-            <div className="image">
-              <img
-                src="https://visualeducation.com/wp-content/uploads/2019/08/Home-cooking-2148.jpg"
-                alt="img"
-              />
+          <div className="slider-controler">
+            <div className="swiper-button-prev slider-arrow">
+              <ion-icon name="arrow-forword-outline"></ion-icon>
             </div>
-          </SwiperSlide>
-          ...
+            <div className="swiper-button-next slider-arrow">
+              <ion-icon name="arrow-back-outline"></ion-icon>
+            </div>
+            <div className="swiper-pagination"></div>
+          </div>
         </Swiper>
       </div>
+
+
+<div className="aboutus">
+  <div className="aboutus-conttainer"></div>
+  <div className="aboutus-image"></div>
+</div>
+
       <div className="country">
         {/* <h1 className='cuisine'>Cuisine</h1> */}
         <div className="cuisine-container">
           {category.map((e, index) => {
             return (
-            <Link className="abc" to={`/country/${e.country}/${e._id}`}>
+              <Link className="abc" to={`/country/${e.country}/${e._id}`}>
                 <div key={index} className="cuisine-box">
-                <img
-                  src={e.countryImage}
-                  alt="img"
-                />
-                <h2>{e.country} Food</h2>
-              </div>
-            </Link> 
+                  <img src={e.countryImage} alt="img" />
+                  <h2>{e.country} Food</h2>
+                </div>
+              </Link>
             );
           })}
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
