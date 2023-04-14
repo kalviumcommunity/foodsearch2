@@ -107,8 +107,16 @@ function Homepage() {
 
 
 <div className="aboutus">
-  <div className="aboutus-conttainer"></div>
-  <div className="aboutus-image"></div>
+  <div className="aboutus-container">
+    <h1>Welcome to CraveSavor</h1>
+    <h2>DISCOVER OUR STORY</h2>
+    <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+    <div>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+    <Link to='/about-us'><button className="buttn">Read More</button></Link>
+  </div>
+  <div className="aboutus-image">
+    <img src="https://i1.adis.ws/i/canon/pro-inside-professional-food-photography-1_46a998f373b44dc583ee52d9448ece04?$media-collection-full-dt-jpg$" alt="imge"/>
+  </div>
 </div>
 
       <div className="country">
