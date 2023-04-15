@@ -114,10 +114,14 @@ input:focus{
 
     .input-wrapper{
         width: 80%;
-        height: 2rem;
+        height: 1.7rem;
     }
 }
 @media screen and (max-width: 360px) {
+    .navbar{
+        height: 3rem;
+        /* background-color: azure; */
+    }
     
     .logo {
         font-size: 1.5rem;
@@ -125,7 +129,22 @@ input:focus{
     }
 
     .input-wrapper{
-        width: 90%;
+        width: 80%;
+        height: 1.5rem;
+    }
+
+    input{
+        font-size: 1rem;
+    }
+
+    #search-icon{
+        font-size: 1rem;
+        color: rgb(160, 28, 48);
+    }
+    .menu-bar{
+        height: 2.2rem;
+        margin-top: 3rem;
+        /* background-color: aqua; */
     }
 
 }
