@@ -1,143 +1,187 @@
-@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
-.image img{
-    width: 100%;
-    height: 100%;
+@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
+.image img {
+  width: 100%;
+  height: 100%;
 }
 
-.image{
-    width: 100%;
-    height: 100vh;
+.image {
+  width: 100%;
+  height: 100vh;
 }
 
-.image-courosel{
-    width: 100%;
-    
-    margin-top: -9rem;
+.image-courosel {
+  width: 100%;
+
+  margin-top: -9rem;
 }
 
-.abc{
-    text-decoration: none;
+.abc {
+  text-decoration: none;
 }
-.country{
-    /* background-color: blueviolet; */
-    width: 100%;
-    height: auto;
-}
-@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
-.country h1{
-    display: flex;
-    justify-content: center;
-    font-size: 3rem;
-    font-family: 'Italianno', cursive;
+.country {
+  /* background-color: blueviolet; */
+  width: 100%;
+  height: auto;
 }
 
-.cuisine-container{
-    display: grid;
-    grid-template-columns: auto auto;
-    column-gap: 4vw;
-    row-gap: 5vh;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10vh;
+.country h1 {
+  /* display: flex; */
+  /* justify-content: ; */
+  color: #a07037;
+  text-decoration: underline;
+  text-decoration-thickness: 7px;
+  text-decoration-color: black;
+  margin-left: 19vh;
+  font-size: 7rem;
+  font-family: "Cookie", cursive;
+  margin-bottom: 5vh;
 }
 
-
-.cuisine-box{
-    width: 25vw;
-    height: 40vh;
-    background-color: aliceblue;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: black;
+.cuisine-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 2vw;
+  row-gap: 5vh;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10vh;
 }
 
-.cuisine-box img{
-    width: 90%;
-    height: 80%;
+.cuisine-box {
+  position: relative;
+  width: 25vw;
+  height: 60vh;
+  /* background-color: aliceblue; */
+  /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  color: black;
 }
 
-.cuisine-box h2{
-
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.cuisine-box ::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.2;
 }
 
-.aboutus{
-    /* width: 100%; */
-    display: flex;
-    height: 69vh;
-    margin: 10vh 10vh 10vh 10vh;
+.cuisine-box:hover img {
+  opacity: 0.5;
+}
+.cuisine-box img {
+  width: 100%;
+  height: 100%;
 }
 
-
-.aboutus-container{
-    /* background-color: #58370f; */
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:flex-start;
+.cuisine-name {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.aboutus-container h1{
-    font-size: 3.6rem;
-    margin-bottom: 2vh;
-    font-weight:500 ;
-    color: #a07037;
-    font-family: 'Cookie', cursive;
-    line-height: 50px;
+.cuisine-box h2 {
+  text-transform: capitalize;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-.aboutus-container h2{
-    font-size: 2.5rem;
-    margin-bottom:1vh;
-    color: black;
-    font-family: 'Josefin Sans', sans-serif;
-    text-decoration: underline;
-    text-decoration-thickness: 7px;
-    text-decoration-color: #a07037;
-    font-weight: 800;
-    text-underline-position: above; 
+.cuisine-box:hover h2 {
+  opacity: 1;
 }
 
-
-.aboutus-image{
-    /* background-color: #a07037; */
-    width: 50%;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-
+.aboutus {
+  /* width: 100%; */
+  display: flex;
+  height: max-content;
+  margin: 10vh 10vh 10vh 10vh;
 }
 
-.aboutus-image img{
-    width: 90%;
-    height: 100%;
-    /* justify-content: center; */
+.aboutus-container {
+  /* background-color: #58370f; */
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-.aboutus-container div{
-    /* font-size: 3rem; */
-    line-height: 1.8;
-    font-family: 'Josefin Sans', sans-serif;
-    width: 89%;
-    margin-top: 3vh;
+.aboutus-container h1 {
+  font-size: 3.6rem;
+  margin-bottom: 2vh;
+  font-weight: 500;
+  color: #a07037;
+  font-family: "Cookie", cursive;
+  line-height: 50px;
+}
+
+.aboutus-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1vh;
+  color: rgb(0, 0, 0);
+  font-family: "Josefin Sans", sans-serif;
+  text-decoration: underline;
+  text-decoration-thickness: 7px;
+  text-decoration-color: #a07037;
+  font-weight: 800;
+  text-underline-position: above;
+}
+
+.aboutus-image {
+  /* background-color: #a07037; */
+  width: 50%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.aboutus-image img {
+  width: 80%;
+  height: 100%;
+  /* justify-content: center; */
+}
+
+.aboutus-container div {
+  /* font-size: 3rem; */
+  line-height: 1.8;
+  font-family: "Josefin Sans", sans-serif;
+  width: 99%;
+  margin-top: 3vh;
 }
 
 /* CSS */
 .buttn {
-  width: 10vw;
+  width: 100%;
   color: #fff;
   padding: 15px 25px;
   border-radius: 100px;
-  background-color:#a07037;
-  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 87% at 26% 20%, rgba(255, 255, 255, 0.41) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+  background-color: #a07037;
+  background-image: radial-gradient(
+      93% 87% at 87% 89%,
+      rgba(0, 0, 0, 0.23) 0%,
+      transparent 86.18%
+    ),
+    radial-gradient(
+      66% 87% at 26% 20%,
+      rgba(255, 255, 255, 0.41) 0%,
+      rgba(255, 255, 255, 0) 69.79%,
+      rgba(255, 255, 255, 0) 100%
+    );
   box-shadow: 2px 19px 31px rgba(0, 0, 0, 0.2);
   font-weight: bold;
   font-size: 16px;
@@ -150,5 +194,145 @@
 
   cursor: pointer;
   margin-top: 3vh;
-  
 }
+
+.country-image {
+  width: 100%;
+  height: 50vh;
+  margin-bottom: 10vh;
+}
+
+.country-image img {
+  width: 100%;
+  height: 100%;
+}
+
+
+@media screen and (max-width: 960px) {
+  .image {
+    width: 100%;
+    height: 60vh;
+  }
+
+  .aboutus {
+    margin: 5vh 5vh 5vh 5vh;
+  }
+
+  .aboutus-container h1 {
+    font-size: 3rem;
+    margin-bottom: 2vh;
+    font-weight: 600;
+}
+.aboutus-container h2{
+    font-size: 1.9rem;
+}
+
+.aboutus-container div{
+    line-height: 1.5;
+    margin-top: 1.4vh;
+    font-size: 1.2rem;
+}
+
+.aboutus-image img{
+    /* background-color: #a07037; */
+    width: 90%;
+    height: 70%;
+}
+
+.buttn{
+    width: 100%;
+    margin-top: 2vh;
+}
+
+.country h1{
+    font-size: 6rem;
+    margin-left: 10vw;
+    margin-bottom: 2vh;
+}
+
+.cuisine-container{
+    grid-template-columns: auto auto;
+    row-gap: 3vh;
+    column-gap: 4vw;
+}
+.cuisine-box{
+    width: 40vw;
+    height: 43vh;
+}
+
+}
+
+@media screen and (max-width: 360px){
+    .image-courosel{
+        margin-top: -5.2rem;
+    }
+
+    .image {
+        width: 100%;
+        height: 50vh;
+      }
+    
+      .aboutus {
+        margin: 8vh 3vh 3vh 3vh;
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+      }
+
+      .aboutus-container{
+        width: 100%;
+      }
+    
+      .aboutus-container h1 {
+        font-size: 2.5rem;
+        line-height: 0.9;
+        margin-bottom: 2vh;
+        font-weight: 500;
+    }
+    .aboutus-container h2{
+        font-size: 1.5rem;
+        margin-bottom: 2vh;
+    }
+    
+    .aboutus-container div{
+        line-height: 1.4;
+        margin-top: 1.4vh;
+        font-size: 1rem;
+    }
+
+    .aboutus-image{
+        margin-top: 3vh;
+        width: 100%;
+    }
+    
+    .aboutus-image img{
+        /* background-color: #a07037; */
+        width: 90%;
+        height: 70%;
+    }
+    
+    .buttn{
+        width: 100%;
+        margin-top: 2vh;
+    }
+    
+    .country h1{
+        font-size: 4rem;
+        font-weight: 400;
+        margin-left: 10vw;
+        margin-bottom: 2vh;
+    }
+    
+    .cuisine-container{
+        grid-template-columns: auto;
+        row-gap: 3vh;
+        column-gap: 4vw;
+    }
+    .cuisine-box{
+        width: 80vw;
+        height: 45vh;
+    }
+
+
+}
+

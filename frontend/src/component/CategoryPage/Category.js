@@ -3,6 +3,7 @@ import "./Category.css";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Navbar from "../Navbar/Navbar";
 export default function Category() {
   const { id } = useParams();
   console.log(id);
@@ -25,6 +26,7 @@ export default function Category() {
 
   return (
     <>
+    <Navbar/>
       <div className="display-img">
         <img
           src="https://restaurantindia.s3.ap-south-1.amazonaws.com/s3fs-public/content6553.jpg"

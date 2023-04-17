@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/swiper-bundle.css";
 import "swiper/css/effect-coverflow";
-import"swiper/css/effect-fade";
+import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./Homepage.css";
@@ -12,7 +12,13 @@ import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import Searchbar from "../Navbar/Searchbar";
-import {Autoplay,EffectFade, EffectCoverflow, Pagination, Navigation } from "swiper";
+import {
+  Autoplay,
+  EffectFade,
+  EffectCoverflow,
+  Pagination,
+  Navigation,
+} from "swiper";
 
 function Homepage() {
   const [category, setCategory] = useState([]);
@@ -34,8 +40,6 @@ function Homepage() {
       <Navbar />
       <Searchbar />
 
-
-
       <div className="image-courosel">
         <Swiper
           spaceBetween={0}
@@ -46,14 +50,14 @@ function Homepage() {
           loop={true}
           autoplay={{
             delay: 5000,
-            disableOnInteraction: false
-        }}
+            disableOnInteraction: false,
+          }}
           fadeEffect={{
             rotate: 0,
             stretch: 0,
             depth: 100,
-            modifier:2.5,
-            crossFade: true
+            modifier: 2.5,
+            crossFade: true,
           }}
           pagination={{ el: ".swiper-pagination", clickable: true }}
           navigation={{
@@ -61,7 +65,13 @@ function Homepage() {
             prevEl: ".swiper-button-prev",
             clickable: true,
           }}
-          modules={[Autoplay,EffectFade, EffectCoverflow, Pagination, Navigation]}
+          modules={[
+            Autoplay,
+            EffectFade,
+            EffectCoverflow,
+            Pagination,
+            Navigation,
+          ]}
           className="swiper-container"
         >
           <SwiperSlide>
@@ -105,29 +115,51 @@ function Homepage() {
         </Swiper>
       </div>
 
-
-<div className="aboutus">
-  <div className="aboutus-container">
-    <h1>Welcome to CraveSavor</h1>
-    <h2>DISCOVER OUR STORY</h2>
-    <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
-    <div>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-    <Link to='/about-us'><button className="buttn">Read More</button></Link>
-  </div>
-  <div className="aboutus-image">
-    <img src="https://i1.adis.ws/i/canon/pro-inside-professional-food-photography-1_46a998f373b44dc583ee52d9448ece04?$media-collection-full-dt-jpg$" alt="imge"/>
-  </div>
-</div>
+      <div className="aboutus">
+        <div className="aboutus-container">
+          <h1>Welcome to CraveSavor</h1>
+          <h2>DISCOVER OUR STORY</h2>
+          <div>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged.
+          </div>
+          <div>
+            It was popularised in the 1960s with the release of Letraset sheets
+            containing Lorem Ipsum passages, and more recently with desktop
+            publishing software like Aldus PageMaker including versions of Lorem
+            Ipsum.
+          </div>
+          <Link to="/about-us">
+            <button className="buttn">Read More</button>
+          </Link>
+        </div>
+        <div className="aboutus-image">
+          <img
+            src="https://i1.adis.ws/i/canon/pro-inside-professional-food-photography-1_46a998f373b44dc583ee52d9448ece04?$media-collection-full-dt-jpg$"
+            alt="imge"
+          />
+        </div>
+      </div>
 
       <div className="country">
-        {/* <h1 className='cuisine'>Cuisine</h1> */}
+        {/* <div className="country-image">
+          <img alt="img" src="https://www.fotor.com/blog/wp-content/uploads/2020/07/steak-1024x684.jpg"></img>
+        </div> */}
+
+        <h1>Country</h1>
         <div className="cuisine-container">
           {category.map((e, index) => {
             return (
               <Link className="abc" to={`/country/${e.country}/${e._id}`}>
                 <div key={index} className="cuisine-box">
                   <img src={e.countryImage} alt="img" />
-                  <h2>{e.country} Food</h2>
+                  <div className="cuisine-name">
+                    <h2>{e.country} Food</h2>
+                  </div>
                 </div>
               </Link>
             );
