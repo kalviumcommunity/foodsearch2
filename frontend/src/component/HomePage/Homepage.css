@@ -27,7 +27,7 @@
 }
 
 .country h1 {
-  /* display: flex; */
+  display: flex;
   /* justify-content: ; */
   color: #a07037;
   text-decoration: underline;

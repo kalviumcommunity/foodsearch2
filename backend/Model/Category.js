@@ -8,12 +8,10 @@ const category = new mongoose.Schema({
         type:String,
         required:true,
     },
-    subCategoryImage:[
-        {
-            image:{
-            type:String}
-        }
-    ],
+    CategoryImage:{
+        type:String,
+        required:true
+    },
     subCategory:[
         {
             foodType:{

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Category.css";
+import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -29,7 +30,7 @@ export default function Category() {
     <Navbar/>
       <div className="display-img">
         <img
-          src="https://restaurantindia.s3.ap-south-1.amazonaws.com/s3fs-public/content6553.jpg"
+          src={recipeData.CategoryImage}
           alt="country"
         ></img>
       </div>
@@ -51,6 +52,7 @@ export default function Category() {
           );
         })}
       </div>
+      <Footer/>
     </>
   );
 }

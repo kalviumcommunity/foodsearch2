@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Differentrecipe.css";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
 
 export default function Differentrecipe() {
   const { foodType, country } = useParams();
@@ -25,8 +26,14 @@ export default function Differentrecipe() {
   console.log(advice);
   return (
     <>
+    <Navbar/>
       <div className="subcategory">
-        {country} {foodType}
+        <div className="subcategory-image">
+        <img
+          src="https://azbindaas.com/wp-content/uploads/2020/11/roti.jpg"
+          alt="country"
+        ></img>
+        </div>
         <div className="subcategory-container">
           {advice.map((eac, index) => {
             return (

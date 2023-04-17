@@ -66,12 +66,12 @@ app.get("/category/:id",async(req,res)=>{
 
 //adding data in category api
 app.post("/category", (req, res) => {
-  const { country, countryImage,subCategoryImage, subCategory } = req.body;
+  const { country, countryImage,CategoryImage, subCategory } = req.body;
   const category = new Category();
 
   category.country = country;
   category.countryImage = countryImage;
-  category.subCategoryImage=subCategoryImage
+  category.CategoryImage=CategoryImage
   category.subCategory = subCategory;
   
 
