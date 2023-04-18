@@ -1,5 +1,8 @@
 
-
+.subcategory-image img{
+    width: 100%;
+    height: 65vh;
+}
 
 
 .subcategory-container{
