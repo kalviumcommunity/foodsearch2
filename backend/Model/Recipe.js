@@ -16,14 +16,13 @@ const recipe = new mongoose.Schema({
     type: String,
     required: true,
   },
-  foodtypeImage:{
-    type:String,
-    required:true,
-  },
-  recipe:{
-    type:String,
-    required:true
-  },
+  recipe: [
+    {
+      recipeList: {
+        type: String,
+      },
+    },
+  ],
 
   video: {
     type: String,

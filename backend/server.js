@@ -41,7 +41,7 @@ mongoose
 
 //getting all the category data from category api
 app.get("/category",async (req, res) => {
-  const category=await Category.find()
+  const category=await Category.find(req.query)
   res.send(category);
 });
 
@@ -125,6 +125,7 @@ app.post("/recipe", (req, res) => {
   recipes.image = image;
   recipes.country = country;
   recipes.foodtype = foodtype;
+  // recipes.foodtypeImage=foodtypeImage;
   recipes.recipe = recipe;
   recipes.video = video;
   recipes.serving = serving;
