@@ -6,7 +6,7 @@
 
 
 .subcategory-container{
-    
+    margin-top: 10vh;
     width: auto;
     height: auto;
     display: grid;
@@ -19,8 +19,8 @@
 
 .subcategory-box{
     position:relative ;
-    width: 20vw;
-    height: 40vh;
+    width: 25vw;
+    height: 60vh;
     background-color: aliceblue;
     display: flex;
     justify-content: center;

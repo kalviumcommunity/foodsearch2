@@ -3,6 +3,7 @@ import "./Differentrecipe.css";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 
 export default function Differentrecipe() {
   const { foodType, country } = useParams();
@@ -21,7 +22,7 @@ export default function Differentrecipe() {
       .catch((err) => {
         console.log(console.error);
       });
-  }, [country, foodType]);
+  }, []);
 
   console.log(advice);
   return (
@@ -49,6 +50,7 @@ export default function Differentrecipe() {
           })}
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

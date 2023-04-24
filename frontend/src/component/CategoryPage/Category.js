@@ -8,7 +8,7 @@ import Navbar from "../Navbar/Navbar";
 export default function Category() {
   const { id } = useParams();
   console.log(id);
-  const [recipeData, setRecipeData] = useState({ subCategory: [] });
+  const [recipeData, setRecipeData] = useState([]);
 
   useEffect(() => console.log(recipeData), [recipeData]);
 
@@ -39,7 +39,7 @@ export default function Category() {
       </div>
 
       <div className="category-container">
-        {subcategory.map((e) => {
+        {subcategory && subcategory.map((e) => {
           return (
             <Link to={`/country/${recipeData.country}/subcategory/${e.foodType}`}>
               <div className="category-box">
