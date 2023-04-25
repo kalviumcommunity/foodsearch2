@@ -45,7 +45,7 @@ function Homepage() {
           spaceBetween={0}
           slidesPerView={1}
           effect={"fade"}
-          grabCursor={true}
+          grabCursor={false}
           centeredSlides={true}
           loop={true}
           autoplay={{

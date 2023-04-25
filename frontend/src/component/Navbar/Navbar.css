@@ -3,6 +3,7 @@
 
 
 .navbar{
+    /* color: firebrick; */
     position: fixed;
     top: 0;
     width: 100%;
@@ -13,18 +14,23 @@
     height: 5rem;
     z-index: 7;
 }
+.navbar div{
+    color:#eca043;
+}
 
 .navbar.active{
     background-color: black;
     opacity: 0.9;
 }
 
+.navbar.active div{
+    color:white;
+}
 .abc{
     text-decoration: none;
 }
 
 .logo{
-    color: white;
     font-size: 3rem;
     font-weight: 300;
     margin-right: 15vw;
@@ -93,7 +99,6 @@ input:focus{
     display: flex;
     justify-content: center;
     font-size: 2 rem;
-    color: white;
 }
 
 

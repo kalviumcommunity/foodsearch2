@@ -4,7 +4,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 
 function Signup() {
-  const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
+  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
   return (
     <div>
       {isAuthenticated ? (
@@ -13,7 +13,6 @@ function Signup() {
             Log Out
           </button>
 
-          <img src={user.picture} />
         </>
       ) : (
         <button onClick={loginWithRedirect} className="btn">

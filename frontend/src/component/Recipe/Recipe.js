@@ -1,6 +1,9 @@
 import React from "react";
+import "./Recipe.css";
+import Navbar from "../Navbar/Navbar";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Footer from "../Footer/Footer";
 
 function Recipe() {
   const { id } = useParams();
@@ -9,18 +12,20 @@ function Recipe() {
   useEffect(() => console.log(recipeData), [recipeData]);
 
   useEffect(() => {
-
-    const API=process.env.REACT_APP_API+`/recipe/${id}`
+    const API = process.env.REACT_APP_API + `/recipe/${id}`;
     fetch(API)
       .then((res) => res.json())
       .then((data) => {
         setRecipeData(data);
       });
   }, [id]);
+
+  console.log(recipeData.ingredient);
   return (
     <>
-      <div className="sahipaneer-container">
-        <div className="sahipaneer-video">
+      <Navbar />
+      <div className="recipe-container">
+        <div className="recipe-video">
           <iframe
             src={recipeData.video}
             title={recipeData.name}
@@ -36,36 +41,49 @@ function Recipe() {
             onClick={() => window.open(recipeData.video)}
           /> */}
         </div>
-        <div className="sahipaneer-discription">
-          <div className="sahipaneer-name">
+        <div className="recipe-discription">
+          <div className="recipe-name">
             <h1>{recipeData.name}</h1>
           </div>
-          <div className="sahipaneer-abc">
+          <div className="recipe-abc">
             <div className="like">
               {/* <Fclike /> */}
               like
             </div>
-            <div className="comment">Comment</div>
-            <div className="recipe">Recipe</div>
             <div className="save">Save</div>
-            <Link to="/save">
+            {/* <Link to="/save">
               <button className="btn">Save</button>
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className="ingredients">
           <h2>Ingredients</h2>
-          {/* <div className="Ingredients-list">
-            <p>{recipeData.ingredient}</p>
-          </div> */}
+          <div className="Ingredients-list">
+            {recipeData.ingredient &&
+              recipeData.ingredient.map((e) => {
+                return (
+                  <ul>
+                    <li>{e.ingredientName}</li>
+                  </ul>
+                );
+              })}
+          </div>
         </div>
         <div className="recipe-page">
           <h2>Recipe</h2>
           <div className="method">
-            <p>{recipeData.recipe}</p>
+            <ol>
+              {/* <p>{recipeData.recipe}</p> */}
+              {recipeData.recipe &&
+                recipeData.recipe.map((e) => {
+                  return <li>{e.recipeList}</li>;
+                })}
+            </ol>
           </div>
         </div>
       </div>
+
+      <Footer/>
     </>
   );
 }
