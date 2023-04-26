@@ -14,7 +14,6 @@ function Footer(){
                 </ul>
                 <ul className="menu">
                     <li><Link className="a" to='/'>Home</Link></li>
-                    <li><Link className="a" to='/recipe'>Resipe</Link></li>
                     <li><Link className="a" to='/save'>Save</Link></li>
                     <li><Link className="a" to='/about-us'>About Us</Link></li>
                 </ul>
