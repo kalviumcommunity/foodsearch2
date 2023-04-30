@@ -67,10 +67,6 @@ function Searchbar() {
                               <h2>
                                 {i.name}
                               </h2>
-                      
-                              <span style={{ color: "var(--marigold)" }}>
-                                {i.currentMin}
-                              </span>
                             </div>
                           </div>
                         </Link>
