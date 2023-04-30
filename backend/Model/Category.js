@@ -3,6 +3,8 @@ const category = new mongoose.Schema({
     country:{
         type:String,
         required:true,
+        index:true,
+        unique:true
     },
     countryImage:{
         type:String,

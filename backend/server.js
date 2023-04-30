@@ -37,6 +37,8 @@ app.get("/category", async (req, res) => {
   res.send(category);
 });
 
+
+
 //getting category data based on id from category api
 app.get("/category/:id", async (req, res) => {
   const { id } = req.params;
@@ -76,11 +78,29 @@ app.post("/category", (req, res) => {
   res.send({ message: "done successfully" });
 });
 
-//getting all the data from recipe api
+// getting all the data from recipe api
 app.get("/recipe", async (req, res) => {
-  const recipe = await Recipe.find(req.query);
-  res.send(recipe);
+  const {food} = req.query
+  if(food){
+    const foods = await Recipe.aggregate([{
+      $match:{
+        name:{$regex: new RegExp(`^${food}`,"i")},
+      },
+    }])
+    res.send(foods);
+    // console.log(foods);
+  }
+    
+
+  
 });
+
+app.get( "/recipe",async(req,res)=>{
+  const recipe = await Recipe.find(req.query);
+  res.send(recipe)
+})
+
+
 
 //geting data based on id from recipe api
 app.get("/recipe/:id", async (req, res) => {

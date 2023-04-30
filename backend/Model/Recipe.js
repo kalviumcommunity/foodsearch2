@@ -37,6 +37,9 @@ const recipe = new mongoose.Schema({
       ingredientName: {
         type: String,
       },
+      ingredientQunt:{
+        type:Number,
+      }
     },
   ],
 });

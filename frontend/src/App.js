@@ -7,7 +7,7 @@ import AboutUs from './component/Aboutus/AboutUs';
 import Category from './component/CategoryPage/Category';
 import Differentrecipe from './component/DifferentRecipe/Differentrecipe';
 import Recipe from './component/Recipe/Recipe';
-
+import Error from './component/Error/Error';
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
       <Route path='/save'element={<Save/>}/>
       <Route path='/about-us'element={<AboutUs/>}/>
       <Route path={"indian/:id"} element={<Recipe />} />
+      <Route path='*' element={<Error/>}/>
       </Routes>
     </div>
      
